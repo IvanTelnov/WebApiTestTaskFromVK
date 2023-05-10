@@ -121,10 +121,9 @@ namespace WebApiTestTaskFromVK.Controllers
             {
                 return NotFound();
             }
-			if (id == 1)
-				return Ok(new JsonResult("You can't delete an admin."));
-
-			var user = await _context.Users.FindAsync(id);
+	    if (id == 1)
+		return Ok(new JsonResult("You can't delete an admin."));
+	    var user = await _context.Users.FindAsync(id);
             if (user?.UserStateId == 2 || user == null)
             {
                 return Ok(new JsonResult("This user does not exist."));
