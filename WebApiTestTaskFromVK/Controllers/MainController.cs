@@ -16,8 +16,8 @@ namespace WebApiTestTaskFromVK.Controllers
             _context = context;
         }
 
-		[HttpGet("GetUsers")]
-		public async Task<ActionResult<IEnumerable<FullInfoViewModel>>> GetUsers(int? countOfUsers) //Получение всех или определенного количества пользователей, начиная с первого
+	[HttpGet("GetUsers")]
+	public async Task<ActionResult<IEnumerable<FullInfoViewModel>>> GetUsers(int? countOfUsers) //Получение всех или определенного количества пользователей, начиная с первого
         {
             if (_context.Users == null)
             {
@@ -50,7 +50,7 @@ namespace WebApiTestTaskFromVK.Controllers
         }
 
         [HttpGet("GetUserById/{id}")]
-		public async Task<ActionResult<FullInfoViewModel>> GetUser(int id) // Получение пользователя по его ID
+	public async Task<ActionResult<FullInfoViewModel>> GetUser(int id) // Получение пользователя по его ID
         {
             if (_context.Users == null)
             {
@@ -69,9 +69,9 @@ namespace WebApiTestTaskFromVK.Controllers
         }
 
         [HttpGet("GetMultipleUsersById")]
-		public async Task<ActionResult<IEnumerable<FullInfoViewModel>>> GetMultipleUsersById([FromQuery] int[] usersId) //Получения нескольких определенных пользователей по их ID 
-		{                                                                                                               
-			if (_context.Users == null || usersId == null)
+	public async Task<ActionResult<IEnumerable<FullInfoViewModel>>> GetMultipleUsersById([FromQuery] int[] usersId) //Получения нескольких определенных пользователей по их ID 
+	{                                                                                                               
+	    if (_context.Users == null || usersId == null)
             {
                 return NotFound();
             }
